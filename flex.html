@@ -11,28 +11,9 @@
     	<header>
             <ul>
                 <a href="#">Hallo Devi</a>
-                <a href="#openModal">Uitloggen</a>
+                <a href="#">Uitloggen</a>
                 <a href="flex.html" ><img class="logo" alt="logo" src="img/icon175x175.png"></a>
     	   </ul>
-           <section id="openModal" class="modalDialog">
-                <img src="img/Transavia_3.jpg" id="bg" alt="">
-                    <form id="modal" method="get" action="flex.html">
-                        <h1>
-                        Welkom!
-                        </h1>
-                         <fieldset>
-                            <legend>inloggen</legend>
-                            <label for="boekingsNummer">Boekingsnummer</label>
-                            <input type="text" id="boekingsNummer" placeholder="BRN123" required>
-                            <label for="achternaam">Achternaam</label>
-                            <input type="text" id="achternaam" placeholder="Simon" required>
-                            <button type="submit">Inloggen</button>
-                            <p class="gast" id="button">
-                                <a href="flex.html">of bezoeken als gast</a>
-                            </p>
-                        </fieldset>
-                    </form>
-            </section>
         </header>
         <figure>
             <section class="banner">
@@ -191,21 +172,5 @@
         <footer>
             <img src="img/transavia-2.svg" alt="logo">
         </footer>
-        
-        <script>
-            var slider = document.getElementById("woorden");
-            var output = document.getElementById("aantal");
-                output.innerHTML = slider.value;
-
-            slider.oninput = function() {
-                output.innerHTML = this.value;
-            }
-            
-            function loading() {
-                var element = document.getElementsByClassName("load");
-                element.classList.add("loader");
-                element.classList.remove("load");
-            }
-        </script>
     </body>
 </html>
