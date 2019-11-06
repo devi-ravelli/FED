@@ -1,0 +1,13 @@
+ul {
+    display: flex;
+    flex-wrap: row wrap;
+    padding: 1em;
+    margin: 1em;
+    margin: 0 auto;
+}
+li {
+    flex-wrap: wrap;
+    text-decoration: none;
+    padding: 2em;
+    order: 2;
+}

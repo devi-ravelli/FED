@@ -2,40 +2,45 @@
 <html lang="nl">
     <head>
         <meta charset="utf-8">
-        <title>Transavia verhalen app</title>
+        <title>Devi Rae Simon Portfolio</title>
         <link rel="stylesheet" href="css/flex.css">
-        <link rel="stylesheet" href="css/style-filter.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
+    <body id="nightmodus">
     	<header>
             <ul>
-                <a href="#">Hallo Devi</a>
+                <a href="#">Hallo Devi!</a>
                 <a href="#">Uitloggen</a>
+                <button class="toggle" onclick="myFunction()" >Night mode</button>
                 <a href="flex.html" ><img class="logo" alt="logo" src="img/icon175x175.png"></a>
-    	   </ul>
+           </ul>
         </header>
-        <figure>
-            <section class="banner">
-            </section>
-        </figure>
+        <section>
+            <h1>Meer dan 99 verhalen</h1>
+            <h2>Lees ze allemaal!</h2>            
+            <figure>
+                <section class="banner">
+                </section>
+            </figure>
+        </section>
         
         <nav>
             <form>
-                <input type="text" placeholder="zoek op trefwoord"/>
+                <input type="text" placeholder="zoek een verhaal op trefwoord" label="zoek op verhalen"/>
                 <input type="submit" name="submit" value="Zoeken" />
             </form>
         </nav>
         
         <aside>
-            <h1>Populaire Verhalen</h1>
+            <h1>Populairste verhalen</h1>
                 <article>
                     <header>
-                        <h2>&gt; Stijloefeningen (92) – Vergezocht</h2>
+                        <h2>&gt; Stijloefeningen (71) – Vrijdag de 13e</h2>
                     </header>
-                    <p>Het was in de omstreken van een gure februaridag rond het middaguur. </p>
+                    <p>Bij het uitstappen van de bus waait mijn jas open, precies op het moment dat de buschauffeur de deuren sluit. </p>
                     <footer>
-                        <p>32 Like's, <a href="#">16 reactie's</a></p>
+                        <p>25 Like's, <a href="#">12 reactie's</a></p>
+                        <button onclick="" class="later">Nu lezen</button>
                     </footer>
                 </article>
 
@@ -46,6 +51,7 @@
                         <p>Het regent pijpenstelen van het merk Dunhill en het waait flink als ik de bus van de GVB uitstapt. </p>
                     <footer>
                         <p>30 Like's, <a href="#">17 reactie's</a></p>
+                        <button onclick="" class="later">Nu lezen</button>
                     </footer>
                 </article>
 
@@ -56,6 +62,7 @@
                     <p>Bij het uitstappen van de bus waait mijn jas open, precies op het moment dat de buschauffeur de deuren sluit. </p>
                     <footer>
                         <p>25 Like's, <a href="#">12 reactie's</a></p>
+                        <button onclick="" class="later">Nu lezen</button>
                     </footer>
                 </article>
         </aside>
@@ -71,7 +78,7 @@
                     </select>
                 </p>
                 <p><b>maximaal aantal woorden</b></p>
-                <input class="slider" type="range" min="100" max="2000" value="1000" id="woorden">
+                <input class="slider" type="range" min="100" max="3000" value="1000" id="woorden">
                     <p>Woorden: <span id="aantal"></span></p>
             </header>
             
@@ -94,7 +101,7 @@
                 <p>Ik stap dus op ut stationsplein in dieën groâte stad uut dieën bus, met mien zoân in zijne keierwoâguh. Mien zoân sloâpt.</p>
                 <footer>
                     <img class="fav" src="img/star.png" alt="favoriet">
-                    <button class="later">Nu lezen</button>
+                    <button onclick="" class="later">Nu lezen</button>
                     <p>8 Like's, geplaatst 15-9-16, <a href="#">3 reactie's</a></p>
                 </footer>
             </article>
@@ -149,11 +156,9 @@
             
             
             
-            <section class="load">
-                <button id="loadMore" onclick="loading()">
-                    Meer verhalen laden
-                </button>
-            </section>         
+            <button id="loadMore" onclick="loading()">
+                Meer verhalen laden
+            </button>
         </main>
         
         <aside id="favorieten">
@@ -165,6 +170,7 @@
                     <p>Het was in de omstreken van een gure februaridag rond het middaguur. </p>
                     <footer>
                         <p>32 Like's, <a href="#">16 reactie's</a></p>
+                        <button onclick="" class="later">Nu lezen</button>
                     </footer>
                 </article>
         </aside>
@@ -172,5 +178,19 @@
         <footer>
             <img src="img/transavia-2.svg" alt="logo">
         </footer>
+        
+        <script>
+            var slider = document.getElementById("woorden");
+            var output = document.getElementById("aantal");
+                output.innerHTML = slider.value;
+
+                slider.oninput = function() {
+                    output.innerHTML = this.value;
+                }
+            
+            function myFunction() {
+                document.getElementById("nightmodus").classList.add("nightmode");
+                }
+        </script>
     </body>
 </html>

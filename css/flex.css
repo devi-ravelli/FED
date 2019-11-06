@@ -1,11 +1,12 @@
-/* flex */
+/* flexbox en layout */
 body {
 	margin: 0 auto;
 	display: flex;
 	flex-flow: row wrap;
 	font-family: "trebuchet ms",sans-serif;
-	flex-flow: center;
     flex-direction: row-reverse;
+    overflow-x: hidden;
+    justify-content: center;
 }
 header {
 	width: 100%;
@@ -13,10 +14,15 @@ header {
 	color: #00d66c;
 }
 nav {
-	padding: 0.4em;
+    padding: 1em;
 	width: 100%;
 }
+section {
+    padding-top: 10em;
+    font-family: cursive;
+}
 main {
+    padding-top: 30em;
 	width: 100%;
     order: 2;
 }
@@ -28,6 +34,7 @@ aside {
 
 /* header */
 body>header {
+    position: fixed;
 	box-shadow: 0em 0.2em 1em rgba(0, 0, 0, 0.8);
 	height: 3.4em;
 }
@@ -38,7 +45,8 @@ header>ul>a {
 	font-size: 1.1em;
 }
 header>ul>a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
+	font-size: 1.2em;
 }
 .logo {
 	width: 2.7em;
@@ -47,7 +55,29 @@ header>ul>a:hover {
 	top: 0;
 	padding: 0.2em;
 	position: absolute;
+    z-index: -1;
 }
+
+/* nightmodus */
+button.toggle {
+    float: right;
+    max-width: 9em;
+    padding: 0.5em;
+    margin: -0.4em;
+    margin-right: 4em;
+    transition: transform 0.6s;
+    z-index: 3;
+}
+button.toggle:hover {
+    background-color: #dd0261;
+    transform: scale(2, 2);
+    z-index: 3;
+}
+.nightmode {
+    background-color: black;
+}
+
+/* banner */
 .banner {
     background-image: url('http://i.huffpost.com/gen/4066966/images/o-TOURIST-GREECE-TABLET-facebook.jpg');
     position: absolute;
@@ -55,22 +85,35 @@ header>ul>a:hover {
     top: 3.3em;
     left: 0;
     width: 100%;
-    height: 10em;
+    height: 30em;
     background-size: cover;
     z-index: -1;
-    background-position: center center;
+    background-position: center;
+}
+section>h1 {
+    color: white;
+    font-size: 2em;
+}
+section>h1:hover {
+    color: white;
+}
+section>h2 {
+    color: white;
+    font-size: 1em;
+}
+section>p {
+    color: white;
+    font-size: 1em;
+}
+section {
+
 }
 
-
-/* searchbox */
-nav {
-	margin-top: -2em;
-}
+/* zoekbalk */
 form {
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
-	height: 2.6em;
 	top: 0;
 	border-radius: 1em;
 	background-color: white;
@@ -103,6 +146,7 @@ input[name=submit] {
 }
 input[name=submit]:hover {
     background-color: rgba(255, 122, 158, 1);
+    transform: rotate(10);
 }
 
 /* navigatie */
@@ -139,7 +183,6 @@ li {
   opacity: 1;
 }
 
-
 /* main */
 main {
     margin-top: 2em;
@@ -150,14 +193,17 @@ header>h1 {
 }
 header.filter {
     background-color: #ff3268;
-    border-radius: .5rem .5rem 0 0;
+    border-radius: 0rem .5rem 0 .5rem;
     padding: 0.2rem 0.4rem;
 }
 header.filter>h1 {
     color: white;
+    text-align: center;
 }
 header.filter>p {
     color: white;
+        padding: 0.5em;
+
 }
 select {
     padding: 0.5em;
@@ -170,6 +216,7 @@ article {
 	padding: 0.4em;
     border: 0.1em solid black;
     border-radius: 1.2em;
+    background-color: white;
 }
 article>p {
 	padding-left: 0.8em;
@@ -220,57 +267,6 @@ h2#favorieten {
 	color: #2800a0;
 }
 
-/*overlay inlog scherm
-inspiratie:
-http://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/
-*/
-form#modal {
-    max-width: 25em;
-}
-.modalDialog {
-	position: fixed;
-	box-sizing: border-box;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,0.99);
-	z-index: 99999;
-	opacity:0;
-	transition: opacity 400ms ease-out;
-	pointer-events: none;
-}
-.modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
-}
-.modalDialog > section {
-	max-width: 22em;
-	position: relative;
-	margin: 10% auto;
-	padding: 0.4em 0.3em 0.4em 0.3em;
-	border-radius: 1em;
-	background: #fff;
-}
-
-#bg {
-	position: fixed; 
-	opacity: 0.5;
-	top: 0; 
-	left: 0; 
-	min-width: 100%;
- 	min-height: 100%;
-}
-/* aanmeldformulier */
-
-legend {
-	float: left;
-	width: 100%;
-	font-size: 1.3em;
-	padding: 0 1em 1em 0;
-	display: inline-block;
-	display: none;
-}
 section {
 	text-align: center;
 }
@@ -279,32 +275,6 @@ form {
 	height: auto;
     margin-top: 5em;
 }
-fieldset {
-	border-style: none;
-	transition: all .2s;
-}
-fieldset>label {
-	float: left;
-	color: #000;
-	font-weight: bold;
-}
-fieldset>input {
-    width: 100%;
-    padding: 0.5em 0.5em;
-    margin: 0.5em 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 0.5em;
-}
-fieldset>input:invalid {
-	border-color: red;
-	border-width: 0.1em;
-	}
-fieldset>input:valid {
-  	border-color:green;
-  	border-width: 0.1em;
-} 
 button {
     background-color: #ff3268;
     color: white;
@@ -320,7 +290,7 @@ button:hover {
     background-color: rgba(255, 122, 158, 1);
 }
 
-
+/*Footer*/
 body>footer {
  	right: 0;
   	bottom: 0;
@@ -333,11 +303,6 @@ footer {
 	width: 100%;
     order: 4;
 }
-/*verhalen*/
-article.telegrafisch {
-	text-align: center;
-}
-
 section>a, a:visited {
     text-decoration: none;
     display: block;
@@ -392,15 +357,6 @@ aside#favorieten {
   animation: loading 2.5s linear infinite;
 }
 
-@keyframes loading {
-    from {left: -200px; width: 30%;}
-    50% {width: 30%;}
-    70% {width: 70%;}
-    80% { left: 50%;}
-    95% {left: 120%;}
-    to {left: 100%;}
-}
-
 /* breakpoint */
 @media only screen and (min-width : 40em) {
 	main {
@@ -422,7 +378,12 @@ aside#favorieten {
 		margin-top: 1.2em;
 		align-items: baseline;
 		padding-left: 1em;
+        transition: transform 1s;
 	}	
+    aside:hover {
+        transform: scale(1.1)
+
+    }
 
 	main>ul {
 		max-width: 42em;
@@ -446,9 +407,24 @@ aside#favorieten {
 	body {
 		justify-content: center;
 	}
+    .banner {
+    background-image: url('http://i.huffpost.com/gen/4066966/images/o-TOURIST-GREECE-TABLET-facebook.jpg');
+    position: absolute;
+    opacity: 0.6;
+    top: 3.3em;
+    left: 0;
+    width: 100%;
+    height: 46em;
+    background-size: cover;
+    z-index: -1;
+    background-position: center;
+    }
 	nav>form {
 		width: 75%;
 	}
+    main,aside {
+        padding-top: 20em;
+    }
 	main>ul>li {
 		display: inline;
 	}
@@ -460,6 +436,23 @@ aside#favorieten {
     aside#favorieten {
         display: none;
         margin-top: 7.5em;
+    }
+    section>h1 {
+    color: white;
+    font-size: 2em;
+    transition: transform 1s;
+    }
+    section>h1:hover {
+        color: white;
+        transform: scale(2, 2)
+    }
+    section>h2 {
+        color: white;
+            font-size: 2em;
+    }
+    section>p {
+        color: white;
+        font-size: 2em;
     }
 }
 
